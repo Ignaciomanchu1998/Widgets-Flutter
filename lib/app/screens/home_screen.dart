@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../config/config.dart';
+
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
@@ -9,12 +11,23 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Widgets by Flutter'),
       ),
-      body: const Center(
-        child: Text('HomeScreen'),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        child: const Icon(Icons.add),
+      body: ListView.builder(
+        shrinkWrap: true,
+        itemCount: MenuItemRoute.itemsMenu.length,
+        itemBuilder: (_, index) {
+          final item = MenuItemRoute.itemsMenu[index];
+          return ListTile(
+            leading: Icon(item.icon),
+            title: Text(
+              item.title,
+              style: const TextStyle(
+                fontSize: 18,
+              ),
+            ),
+            trailing: const Icon(Icons.arrow_right_alt_outlined),
+            onTap: () {},
+          );
+        },
       ),
     );
   }
