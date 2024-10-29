@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:widgets_flutter/app/screens/home_screen.dart';
+import 'package:widgets_flutter/config/config.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Widgets by Flutter',
-      home: HomeScreen(),
+      theme: AppTheme(selectedIndex: 0).getLightTheme(),
+      home: const HomeScreen(),
     );
   }
 }

@@ -12,6 +12,10 @@ class HomeScreen extends StatelessWidget {
       body: const Center(
         child: Text('HomeScreen'),
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: const Icon(Icons.add),
+      ),
     );
   }
 }
