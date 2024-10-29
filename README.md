@@ -1,4 +1,4 @@
-# Nombre del Repositorio
+# Widgets-Flutter
 
 Repositorio de componentes, patrones de diseño y manejadores de estado en Flutter, creado para facilitar el desarrollo y establecer buenas prácticas en aplicaciones móviles. Este proyecto está orientado tanto para desarrolladores que inician con Flutter como para aquellos que buscan una referencia completa en un solo lugar.
 
