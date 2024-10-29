@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'screens/screens.dart';
+import '../config/routes/app_route.dart';
 import '../config/config.dart';
 
 class MyApp extends StatelessWidget {
@@ -8,11 +8,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       title: 'Widgets by Flutter',
       theme: AppTheme(selectedIndex: 0).getLightTheme(),
-      home: const HomeScreen(),
+      routerConfig: appRouter,
     );
   }
 }

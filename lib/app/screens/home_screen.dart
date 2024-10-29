@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:widgets_flutter/app/widgets/widgets.dart';
+import 'package:go_router/go_router.dart';
 
-import '../../config/config.dart';
+// Imports.
+import 'package:widgets_flutter/config/config.dart';
+import 'package:widgets_flutter/app/widgets/widgets.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
+
+  static const String routeName = '/home';
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +30,7 @@ class HomeScreen extends StatelessWidget {
               fontWeight: FontWeight.w300,
             ),
             trailing: const Icon(Icons.arrow_right_alt_outlined),
-            onTap: () {},
+            onTap: () => context.go(item.route),
           );
         },
       ),

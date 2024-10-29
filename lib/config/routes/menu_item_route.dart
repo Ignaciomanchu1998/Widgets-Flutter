@@ -18,7 +18,7 @@ class MenuItemRoute {
       title: 'Botones',
       subtitle: 'Agregando los botones que se usa en Flutter',
       icon: Icons.touch_app,
-      route: '/settings',
+      route: '/buttons',
     ),
     MenuItemRoute(
       title: 'Tarjetas',
