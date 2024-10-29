@@ -4,7 +4,7 @@ Repositorio de componentes, patrones de diseño y manejadores de estado en Flutt
 
 ## Tabla de Contenidos
 - [Descripción General](#descripción-general)
-- [Requisitos Previos e Instalación](#requisitos)
+- [Requisitos Previos e Instalación](#requisitos-previos-e-instalación)
 - [Instalación](#instalación)
 - [Estructura del Proyecto](#estructura-del-proyecto)
 - [Componentes](#componentes)
@@ -19,7 +19,7 @@ Repositorio de componentes, patrones de diseño y manejadores de estado en Flutt
 Este repositorio centraliza ejemplos de componentes reutilizables, patrones de diseño, y manejadores de estado en Flutter. Su propósito es proporcionar implementaciones listas para usar y adaptadas a distintos escenarios en el desarrollo móvil.
 
 
-## 🚀 Requisitos Previos
+## Requisitos Previos e Instalación
 
 Para trabajar con este repositorio, necesitarás instalar las siguientes herramientas:
 
