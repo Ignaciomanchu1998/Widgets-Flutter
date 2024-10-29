@@ -4,7 +4,7 @@ Repositorio de componentes, patrones de diseño y manejadores de estado en Flutt
 
 ## Tabla de Contenidos
 - [Descripción General](#descripción-general)
-- [🚀 Requisitos Previos e Instalación](#requisitos-previos-e-instalación)
+- [Requisitos Previos e Instalación](#requisitos-previos-e-instalación)
 - [Instalación](#instalación)
 - [Estructura del Proyecto](#estructura-del-proyecto)
 - [Componentes](#componentes)
