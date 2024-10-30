@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:widgets_flutter/app/widgets/widgets.dart';
+import 'package:widgets_flutter/app/presentation/widgets/widgets.dart';
 
 class ButtonScreen extends StatelessWidget {
   const ButtonScreen({super.key});
