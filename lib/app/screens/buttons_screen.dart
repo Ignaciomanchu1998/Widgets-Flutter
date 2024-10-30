@@ -31,9 +31,11 @@ class _Body extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Wrap(
+        spacing: 6,
+        runSpacing: 10,
         alignment: WrapAlignment.center,
         crossAxisAlignment: WrapCrossAlignment.center,
-        spacing: 5,
+        runAlignment: WrapAlignment.center,
         children: [
           ElevatedButton(
             onPressed: () {},
@@ -78,10 +80,18 @@ class _Body extends StatelessWidget {
             onPressed: () {},
             icon: const Icon(Icons.add),
           ),
-          FloatingActionButton(
-            onPressed: () {},
-            child: const Icon(Icons.add),
-          ),
+
+          // CustomButton
+          InkWell(
+            onTap: () {},
+            borderRadius: BorderRadius.circular(50),
+            child: Container(
+              padding: const EdgeInsets.symmetric(vertical: 7, horizontal: 16),
+              child: const TextCustomWidget(
+                text: 'CustomButton (InkWell)',
+              ),
+            ),
+          )
         ],
       ),
     );
