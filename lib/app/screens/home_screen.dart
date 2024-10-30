@@ -30,7 +30,7 @@ class HomeScreen extends StatelessWidget {
               fontWeight: FontWeight.w300,
             ),
             trailing: const Icon(Icons.arrow_right_alt_outlined),
-            onTap: () => context.go(item.route),
+            onTap: () => context.pushNamed(item.route),
           );
         },
       ),
