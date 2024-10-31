@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:widgets_flutter/app/presentation/widgets/widgets.dart';
+import 'package:go_router/go_router.dart';
+import 'package:widgets_flutter/app/presentation/presentation.dart';
 
 class ButtonScreen extends StatelessWidget {
   const ButtonScreen({super.key});
@@ -38,52 +39,156 @@ class _Body extends StatelessWidget {
         runAlignment: WrapAlignment.center,
         children: [
           ElevatedButton(
-            onPressed: () {},
+            onPressed: () => context.pushNamed(
+              CodeScreenShared.routeName,
+              extra: {
+                'screenName': 'ElevatedButton',
+                'code': '''
+                  ElevatedButton(
+                    onPressed: () {}
+                    child: const TextCustomWidget(
+                      text: 'ElevatedButton',
+                    ),
+                  )
+                '''
+              },
+            ),
             child: const TextCustomWidget(
               text: 'ElevatedButton',
             ),
           ),
           ElevatedButton.icon(
-            onPressed: () {},
+            onPressed: () => context.pushNamed(
+              CodeScreenShared.routeName,
+              extra: {
+                'screenName': 'ElevatedButton Icon',
+                'code': '''
+                  ElevatedButton(
+                    onPressed: () {}
+                    child: const TextCustomWidget(
+                      text: 'ElevatedButton',
+                    ),
+                  )
+                '''
+              },
+            ),
             icon: const Icon(Icons.add),
             label: const TextCustomWidget(
               text: 'ElevatedButton Icon',
             ),
           ),
           OutlinedButton(
-            onPressed: () {},
+            onPressed: () => context.pushNamed(
+              CodeScreenShared.routeName,
+              extra: {
+                'screenName': 'OutlinedButton',
+                'code': '''
+                  ElevatedButton(
+                    onPressed: () {}
+                    child: const TextCustomWidget(
+                      text: 'ElevatedButton',
+                    ),
+                  )
+                '''
+              },
+            ),
             child: const TextCustomWidget(
               text: 'OutlinedButton',
             ),
           ),
           OutlinedButton.icon(
-            onPressed: () {},
+            onPressed: () => context.pushNamed(
+              CodeScreenShared.routeName,
+              extra: {
+                'screenName': 'OutlinedButton Icon',
+                'code': '''
+                  ElevatedButton(
+                    onPressed: () {}
+                    child: const TextCustomWidget(
+                      text: 'ElevatedButton',
+                    ),
+                  )
+                '''
+              },
+            ),
             icon: const Icon(Icons.add),
             label: const TextCustomWidget(
               text: 'OutlinedButton Icon',
             ),
           ),
           TextButton(
-            onPressed: () {},
+            onPressed: () => context.pushNamed(
+              CodeScreenShared.routeName,
+              extra: {
+                'screenName': 'OutlinedButton Icon',
+                'code': '''
+                  ElevatedButton(
+                    onPressed: () {}
+                    child: const TextCustomWidget(
+                      text: 'ElevatedButton',
+                    ),
+                  )
+                '''
+              },
+            ),
             child: const TextCustomWidget(
               text: 'TextButton',
             ),
           ),
           TextButton.icon(
-            onPressed: () {},
+            onPressed: () => context.pushNamed(
+              CodeScreenShared.routeName,
+              extra: {
+                'screenName': 'OutlinedButton Icon',
+                'code': '''
+                  ElevatedButton(
+                    onPressed: () {}
+                    child: const TextCustomWidget(
+                      text: 'ElevatedButton',
+                    ),
+                  )
+                '''
+              },
+            ),
             icon: const Icon(Icons.add),
             label: const TextCustomWidget(
               text: 'TextButton Icon',
             ),
           ),
           IconButton(
-            onPressed: () {},
+            onPressed: () => context.pushNamed(
+              CodeScreenShared.routeName,
+              extra: {
+                'screenName': 'IconButton',
+                'code': '''
+                  ElevatedButton(
+                    onPressed: () {}
+                    child: const TextCustomWidget(
+                      text: 'ElevatedButton',
+                    ),
+                  )
+                '''
+              },
+            ),
             icon: const Icon(Icons.add),
           ),
 
           // CustomButton
           InkWell(
-            onTap: () {},
+            onTap: () => context.pushNamed(
+              CodeScreenShared.routeName,
+              extra: {
+                'screenName': 'CustomButton (InkWell)',
+                'code': '''
+                  ElevatedButton(
+                    onPressed: () {}
+                    child: const TextCustomWidget(
+                      text: 'ElevatedButton',
+                    ),
+                  )
+                '''
+              },
+            ),
             borderRadius: BorderRadius.circular(50),
             child: Container(
               padding: const EdgeInsets.symmetric(vertical: 7, horizontal: 16),
