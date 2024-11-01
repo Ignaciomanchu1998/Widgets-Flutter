@@ -3,7 +3,7 @@ import 'package:go_router/go_router.dart';
 
 // Imports.
 import 'package:widgets_flutter/config/config.dart';
-import 'package:widgets_flutter/app/widgets/widgets.dart';
+import 'package:widgets_flutter/app/presentation/widgets/widgets.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});

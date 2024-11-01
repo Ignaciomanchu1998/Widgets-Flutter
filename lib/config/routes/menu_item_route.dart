@@ -21,22 +21,10 @@ class MenuItemRoute {
       route: '/buttons',
     ),
     MenuItemRoute(
-      title: 'Tarjetas',
-      subtitle: 'Agregando las tarjetas que se usa en Flutter',
-      icon: Icons.card_giftcard,
-      route: '/settings',
+      title: 'Inputs',
+      subtitle: 'Agregando los inputs que se usa en Flutter',
+      icon: Icons.input,
+      route: '/input',
     ),
-    MenuItemRoute(
-      title: 'Animaciones',
-      subtitle: 'Agregando las animaciones que se usa en Flutter',
-      icon: Icons.play_arrow,
-      route: '/settings',
-    ),
-    MenuItemRoute(
-      title: 'Contenedores',
-      subtitle: 'Agregando los contenedores que se usa en Flutter',
-      icon: Icons.layers,
-      route: '/settings',
-    )
   ];
 }
