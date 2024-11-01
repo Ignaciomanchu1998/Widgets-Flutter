@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import '../presentation.dart';
 
@@ -65,9 +66,43 @@ class _TextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextField(
       controller: TextEditingController(),
+      obscureText: false, // Use secure text for passwords.
+      onChanged: (value) {}, // Llamado cuando el usuario cambia el texto.
+      style: const TextStyle(
+        fontSize: 16,
+        fontWeight: FontWeight.w500,
+      ),
       keyboardType: TextInputType.number,
-      decoration: const InputDecoration(
+      decoration: InputDecoration(
         labelText: 'TextField',
+        suffixIcon: IconButton(
+          onPressed: () => context.pushNamed(
+            CodeScreenShared.routeName,
+            extra: {
+              'screenName': 'TextField ',
+              'code': '''
+TextField(
+  controller: TextEditingController(),
+  obscureText: false, // Utilice texto seguro para contraseñas.
+  onChanged: (value) {}, // Llamado cuando el usuario cambia el texto.
+  style: const TextStyle(
+    fontSize: 16,
+    fontWeight: FontWeight.w500,
+  ),
+  keyboardType: TextInputType.number,
+  decoration: InputDecoration(
+    labelText: 'TextField',
+    suffixIcon: IconButton(
+      onPressed: () {},
+      icon: const Icon(Icons.code),
+    ),
+  ),
+)
+              ''',
+            },
+          ),
+          icon: const Icon(Icons.code),
+        ),
       ),
     );
   }
@@ -80,8 +115,31 @@ class _TextFormField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       keyboardType: TextInputType.number,
-      decoration: const InputDecoration(
+      decoration: InputDecoration(
         labelText: 'TextFormField',
+        suffixIcon: IconButton(
+          onPressed: () => context.pushNamed(
+            CodeScreenShared.routeName,
+            extra: {
+              'screenName': 'TextFormField ',
+              'code': '''
+TextFormField(
+  controller: TextEditingController(),
+  obscureText: false, // Utilice texto seguro para contraseñas.
+  keyboardType: TextInputType.number,
+  onChanged: (value) {}, // Llamado cuando el usuario cambia el texto.
+  validator: (value) {
+    return null;
+  }, // Llamado cuando el usuario presiona el botón de enviar.
+  decoration: InputDecoration(
+    labelText: 'TextFormField',
+  ),
+)
+              '''
+            },
+          ),
+          icon: const Icon(Icons.code),
+        ),
       ),
     );
   }
@@ -92,7 +150,34 @@ class _CupertinoTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const CupertinoTextField(
+    return CupertinoTextField(
+      obscureText: false, // Utilice texto seguro para contraseñas.
+      keyboardType: TextInputType.number,
+      onChanged: (value) {}, // Llamado cuando el usuario cambia el texto.
+      autofocus: false, // Utilice el teclado cuando se inicia la aplicación.
+      controller: TextEditingController(),
+      prefix: IconButton(
+        onPressed: () => context.pushNamed(
+          CodeScreenShared.routeName,
+          extra: {
+            'screenName': 'CupertinoTextFormFieldRow',
+            'code': '''
+CupertinoTextField(
+  obscureText: false, // Utilice texto seguro para contraseñas.
+  keyboardType: TextInputType.number,
+  onChanged: (value) {}, // Llamado cuando el usuario cambia el texto.
+  autofocus: false, // Utilice el teclado cuando se inicia la aplicación.
+  controller: TextEditingController(),
+  prefix: IconButton(
+    onPressed: () {},
+    icon: const Icon(Icons.code),
+  ),
+  placeholder: 'CupertinoTextField',
+) ''',
+          },
+        ),
+        icon: const Icon(Icons.code),
+      ),
       placeholder: 'CupertinoTextField',
     );
   }
@@ -104,8 +189,39 @@ class _CupertinoTextFieldRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CupertinoTextFormFieldRow(
-      prefix: const Icon(Icons.add),
+      obscureText: false, // Utilice texto seguro para contraseñas.
+      keyboardType: TextInputType.number,
+      onChanged: (value) {}, // Llamado cuando el usuario cambia el texto.
+      validator: (value) {
+        return null;
+      }, // Llamado para validar cuando el usuario presiona el botón de enviar.
       controller: TextEditingController(),
+      prefix: IconButton(
+        onPressed: () => context.pushNamed(
+          CodeScreenShared.routeName,
+          extra: {
+            'screenName': 'CupertinoTextFormFieldRow',
+            'code': '''
+CupertinoTextFormFieldRow(
+  obscureText: false, // Utilice texto seguro para contraseñas.
+  keyboardType: TextInputType.number,
+  onChanged: (value) {}, // Llamado cuando el usuario cambia el texto.
+  validator: (value) {
+    return null;
+  }, // Llamado para validar cuando el usuario presiona el botón de enviar.
+  controller: TextEditingController(),
+  prefix: IconButton(
+    onPressed: () {},
+    icon: const Icon(Icons.code),
+  ),
+  placeholder: 'CupertinoTextFieldRow',
+)
+            ''',
+          },
+        ),
+        icon: const Icon(Icons.code),
+      ),
+
       placeholder: 'CupertinoTextFieldRow',
     );
   }
