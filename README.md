@@ -35,22 +35,6 @@ Para trabajar con este repositorio, necesitarás instalar las siguientes herrami
      flutter --version
      ```
 
-#### macOS
-1. Instala mediante Homebrew:
-   ```bash
-   brew install --cask flutter
-   ```
-   O descarga el [Flutter SDK](https://docs.flutter.dev/get-started/install/macos)
-2. Extrae el archivo en la ubicación deseada:
-   ```bash
-   cd ~/development
-   unzip ~/Downloads/flutter_macos_arm64.zip
-   ```
-3. Añade Flutter a tu PATH:
-   ```bash
-   export PATH="$PATH:`pwd`/flutter/bin"
-   ```
-
 #### Linux
 1. Descarga el [Flutter SDK](https://docs.flutter.dev/get-started/install/linux)
 2. Extrae el archivo:
