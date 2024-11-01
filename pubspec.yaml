@@ -10,7 +10,7 @@ dependencies:
   flutter:
     sdk: flutter
   go_router: ^14.3.0
-  flutter_syntax_view: ^4.1.0
+  flutter_code_editor: ^0.3.2
 
 dev_dependencies:
   flutter_test:

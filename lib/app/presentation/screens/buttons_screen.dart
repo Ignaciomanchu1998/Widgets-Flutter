@@ -110,12 +110,13 @@ class _ElevatedButtonWithIcon extends StatelessWidget {
         extra: {
           'screenName': 'ElevatedButton Icon',
           'code': '''
-            ElevatedButton(
-              onPressed: () {}
-              child: const TextCustomWidget(
-                text: 'ElevatedButton',
+            ElevatedButton.icon(
+              onPressed: () {},
+              icon: const Icon(Icons.add),
+              label: const TextCustomWidget(
+                text: 'ElevatedButton Icon',
               ),
-            )
+            ),
           '''
         },
       ),
@@ -138,12 +139,12 @@ class _OutlineButton extends StatelessWidget {
         extra: {
           'screenName': 'OutlinedButton',
           'code': '''
-            ElevatedButton(
-              onPressed: () {}
+            OutlinedButton(
+              onPressed: () {},
               child: const TextCustomWidget(
-                text: 'ElevatedButton',
+                text: 'OutlinedButton',
               ),
-            )
+            ),
           '''
         },
       ),
@@ -165,12 +166,13 @@ class _OutlineButtonWithIcon extends StatelessWidget {
         extra: {
           'screenName': 'OutlinedButton Icon',
           'code': '''
-            ElevatedButton(
-              onPressed: () {}
-              child: const TextCustomWidget(
-                text: 'ElevatedButton',
+            OutlinedButton.icon(
+              onPressed: () {},
+              icon: const Icon(Icons.add),
+              label: const TextCustomWidget(
+                text: 'OutlinedButton Icon',
               ),
-            )
+            ),
           '''
         },
       ),
@@ -193,12 +195,12 @@ class _TextButton extends StatelessWidget {
         extra: {
           'screenName': 'OutlinedButton Icon',
           'code': '''
-            ElevatedButton(
-              onPressed: () {}
+            TextButton(
+              onPressed: () {},
               child: const TextCustomWidget(
-                text: 'ElevatedButton',
+                text: 'TextButton',
               ),
-            )
+            ),
           '''
         },
       ),
@@ -220,10 +222,11 @@ class _TextButtonWithIcon extends StatelessWidget {
         extra: {
           'screenName': 'OutlinedButton Icon',
           'code': '''
-            ElevatedButton(
-              onPressed: () {}
-              child: const TextCustomWidget(
-                text: 'ElevatedButton',
+            TextButton.icon(
+              onPressed: () {},
+              icon: const Icon(Icons.add),
+              label: const TextCustomWidget(
+                text: 'TextButton Icon',
               ),
             )
           '''
@@ -248,11 +251,9 @@ class _IconButton extends StatelessWidget {
         extra: {
           'screenName': 'IconButton',
           'code': '''
-            ElevatedButton(
-              onPressed: () {}
-              child: const TextCustomWidget(
-                text: 'ElevatedButton',
-              ),
+            IconButton(
+              onPressed: () {},
+              icon: const Icon(Icons.add),
             )
           '''
         },
@@ -273,10 +274,18 @@ class _ButtonCustomWithInkWell extends StatelessWidget {
         extra: {
           'screenName': 'CustomButton (InkWell)',
           'code': '''
-            ElevatedButton(
-              onPressed: () {}
-              child: const TextCustomWidget(
-                text: 'ElevatedButton',
+            InkWell(
+              onTap: () {},
+              borderRadius: BorderRadius.circular(50),
+              child: Container(
+                padding: const EdgeInsets.symmetric(vertical: 7, horizontal: 16),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(50),
+                  border: Border.all(color: Colors.black),
+                ),
+                child: const TextCustomWidget(
+                  text: 'CustomButton (InkWell)',
+                ),
               ),
             )
           '''
@@ -307,7 +316,29 @@ class _ButtonCustomIconWithInkWell extends StatelessWidget {
         CodeScreenShared.routeName,
         extra: {
           'screenName': 'CustomButton Icon (InkWell)',
-          'code': ''' ''',
+          'code': '''
+            InkWell(
+              onTap: () {},
+              borderRadius: BorderRadius.circular(50),
+              child: Container(
+                padding: const EdgeInsets.symmetric(vertical: 7, horizontal: 16),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(50),
+                  border: Border.all(color: Colors.black),
+                ),
+                child: const Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Icon(Icons.add),
+                    SizedBox(width: 10),
+                    TextCustomWidget(
+                      text: 'CustomButton Icon (InkWell)',
+                    ),
+                  ],
+                ),
+              ),
+            )
+          ''',
         },
       ),
       borderRadius: BorderRadius.circular(50),
