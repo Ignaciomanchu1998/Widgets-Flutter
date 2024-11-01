@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-
 // Imports
 import '../presentation.dart';
 
@@ -41,7 +40,6 @@ class _Body extends StatelessWidget {
         crossAxisAlignment: WrapCrossAlignment.center,
         runAlignment: WrapAlignment.center,
         children: [
-
           // * ElevatedButton
           _ElevatedButton(),
 
@@ -64,7 +62,10 @@ class _Body extends StatelessWidget {
           _IconButton(),
 
           // * CustomButton with button
-          _ButtonCustomWithInkWell()
+          _ButtonCustomWithInkWell(),
+
+          // * CustomButton with icon
+          _ButtonCustomIconWithInkWell(),
         ],
       ),
     );
@@ -284,8 +285,47 @@ class _ButtonCustomWithInkWell extends StatelessWidget {
       borderRadius: BorderRadius.circular(50),
       child: Container(
         padding: const EdgeInsets.symmetric(vertical: 7, horizontal: 16),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(50),
+          border: Border.all(color: Colors.black),
+        ),
         child: const TextCustomWidget(
           text: 'CustomButton (InkWell)',
+        ),
+      ),
+    );
+  }
+}
+
+class _ButtonCustomIconWithInkWell extends StatelessWidget {
+  const _ButtonCustomIconWithInkWell();
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: () => context.pushNamed(
+        CodeScreenShared.routeName,
+        extra: {
+          'screenName': 'CustomButton Icon (InkWell)',
+          'code': ''' ''',
+        },
+      ),
+      borderRadius: BorderRadius.circular(50),
+      child: Container(
+        padding: const EdgeInsets.symmetric(vertical: 7, horizontal: 16),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(50),
+          border: Border.all(color: Colors.black),
+        ),
+        child: const Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Icon(Icons.add),
+            SizedBox(width: 10),
+            TextCustomWidget(
+              text: 'CustomButton Icon (InkWell)',
+            ),
+          ],
         ),
       ),
     );
