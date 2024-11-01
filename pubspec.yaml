@@ -11,6 +11,7 @@ dependencies:
     sdk: flutter
   go_router: ^14.3.0
   flutter_code_editor: ^0.3.2
+  highlight: ^0.7.0
 
 dev_dependencies:
   flutter_test:

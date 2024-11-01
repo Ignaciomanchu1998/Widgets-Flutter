@@ -3,12 +3,20 @@
 import 'package:flutter/painting.dart';
 
 const monokaiSublimeTheme = {
-  'root':
-      TextStyle(backgroundColor: Color(0xff23241f), color: Color(0xfff8f8f2)),
+  'root': TextStyle(
+    backgroundColor: Color(0xff23241f),
+    color: Color(0xfff8f8f2),
+  ),
   'tag': TextStyle(color: Color(0xfff8f8f2)),
   'subst': TextStyle(color: Color(0xfff8f8f2)),
-  'strong': TextStyle(color: Color(0xffa8a8a2), fontWeight: FontWeight.bold),
-  'emphasis': TextStyle(color: Color(0xffa8a8a2), fontStyle: FontStyle.italic),
+  'strong': TextStyle(
+    color: Color(0xffa8a8a2),
+    fontWeight: FontWeight.bold,
+  ),
+  'emphasis': TextStyle(
+    color: Color(0xffa8a8a2),
+    fontStyle: FontStyle.italic,
+  ),
   'bullet': TextStyle(color: Color(0xffae81ff)),
   'quote': TextStyle(color: Color(0xffae81ff)),
   'number': TextStyle(color: Color(0xffae81ff)),
