@@ -1,6 +1,7 @@
 // GoRouter configuration
 import 'package:go_router/go_router.dart';
 import 'package:widgets_flutter/app/presentation/presentation.dart';
+import 'package:widgets_flutter/app/presentation/screens/select_screen.dart';
 
 final appRouter = GoRouter(
   initialLocation: '/',
@@ -15,10 +16,15 @@ final appRouter = GoRouter(
       name: ButtonScreen.routeName,
       builder: (context, state) => const ButtonScreen(),
     ),
-     GoRoute(
+    GoRoute(
       path: '/input',
       name: InputScreen.routeName,
       builder: (context, state) => const InputScreen(),
+    ),
+    GoRoute(
+      path: '/select',
+      name: SelectScreen.routeName,
+      builder: (context, state) => const SelectScreen(),
     ),
     GoRoute(
       path: '/code-screen-shared',

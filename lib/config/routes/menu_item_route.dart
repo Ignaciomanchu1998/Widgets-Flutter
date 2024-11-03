@@ -26,5 +26,11 @@ class MenuItemRoute {
       icon: Icons.input,
       route: '/input',
     ),
+    MenuItemRoute(
+      title: 'Selects',
+      subtitle: 'Agregando los selects que se usa en Flutter',
+      icon: Icons.touch_app,
+      route: '/select',
+    ),
   ];
 }
