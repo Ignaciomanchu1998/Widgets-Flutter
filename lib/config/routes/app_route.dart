@@ -15,10 +15,15 @@ final appRouter = GoRouter(
       name: ButtonScreen.routeName,
       builder: (context, state) => const ButtonScreen(),
     ),
-     GoRoute(
+    GoRoute(
       path: '/input',
       name: InputScreen.routeName,
       builder: (context, state) => const InputScreen(),
+    ),
+    GoRoute(
+      path: '/select',
+      name: SelectScreen.routeName,
+      builder: (context, state) => const SelectScreen(),
     ),
     GoRoute(
       path: '/code-screen-shared',
