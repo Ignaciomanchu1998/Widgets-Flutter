@@ -1,7 +1,6 @@
 // GoRouter configuration
 import 'package:go_router/go_router.dart';
 import 'package:widgets_flutter/app/presentation/presentation.dart';
-import 'package:widgets_flutter/app/presentation/screens/select_screen.dart';
 
 final appRouter = GoRouter(
   initialLocation: '/',
