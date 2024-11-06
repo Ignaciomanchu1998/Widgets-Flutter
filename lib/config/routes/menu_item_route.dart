@@ -27,10 +27,10 @@ class MenuItemRoute {
       route: '/input',
     ),
     MenuItemRoute(
-      title: 'Selects',
-      subtitle: 'Agregando los selects que se usa en Flutter',
+      title: 'DropdownButton',
+      subtitle: 'DropdownButton desplegable permite al usuario seleccionar un elemento',
       icon: Icons.touch_app,
-      route: '/select',
+      route: '/dropdown-button',
     ),
   ];
 }

@@ -3,17 +3,17 @@ import 'package:go_router/go_router.dart';
 
 import '../presentation.dart';
 
-class SelectScreen extends StatelessWidget {
-  const SelectScreen({super.key});
+class DropdownButtonScreen extends StatelessWidget {
+  const DropdownButtonScreen({super.key});
 
-  static const routeName = '/select';
+  static const routeName = '/dropdown-button';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const TextCustomWidget(
-          text: 'Selects',
+          text: 'DropdownButton',
           fontSize: 20,
           fontWeight: FontWeight.w500,
         ),
@@ -52,6 +52,13 @@ class _Body extends StatelessWidget {
           ),
           SizedBox(height: 8),
           _DropdownButtonCustom(),
+
+          // * Section for add link documentation.
+          SizedBox(height: 20),
+          ButtonReadDocWidget(
+            urlDoc:
+                'https://api.flutter.dev/flutter/material/DropdownButton-class.html',
+          ),
         ],
       ),
     );
@@ -95,7 +102,7 @@ class _DropdownButtonState extends State<_DropdownButton> {
             onPressed: () => context.pushNamed(
               CodeScreenShared.routeName,
               extra: {
-                'screenName': 'CupertinoTextFormFieldRow',
+                'screenName': 'DropdownButton',
                 'code': '''
 DropdownButton<String>(
   isExpanded: true, // * Ocupa todo el ancho de la pantalla.
@@ -179,163 +186,155 @@ class _DropdownButtonCustomState extends State<_DropdownButtonCustom> {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: double.maxFinite,
-      child: TextButton(
-        onPressed: () => showModalBottomSheet(
-          context: context,
-          showDragHandle: true,
-          builder: (context) => _Items(
-            fruits: fruits,
-            onPressed: (String value) {
-              defaultFruit = value;
-              context.pop();
-              setState(() {});
-            },
-          ),
-        ),
-        style: TextButton.styleFrom(
-          side: const BorderSide(color: Colors.black, width: 1),
-        ),
-        child: TextCustomWidget(
-          text: defaultFruit,
-          fontWeight: FontWeight.w500,
-          fontSize: 18,
-        ),
-      ),
-    );
-  }
-}
-
-class _Items extends StatelessWidget {
-  const _Items({
-    required this.fruits,
-    required this.onPressed,
-  });
-
-  final List<String> fruits;
-  final ValueChanged<String> onPressed;
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        ListView.builder(
-          padding: const EdgeInsets.all(0),
-          shrinkWrap: true,
-          itemCount: fruits.length,
-          itemBuilder: (_, index) {
-            final item = fruits[index];
-            return ListTile(
-              title: TextCustomWidget(text: item),
-              onTap: () => onPressed(item),
-            );
-          },
-        ),
-        ListTile(
-          dense: true,
-          title: const TextCustomWidget(text: 'Visualizar código'),
-          onTap: () {
-            context.pushNamed(
-              CodeScreenShared.routeName,
-              extra: {
-                'screenName': 'DropdownButtonCustomized',
-                'code': '''
-// * DropdownButton customized.
-class _DropdownButtonCustom extends StatefulWidget {
-  const _DropdownButtonCustom();
-
-  @override
-  State<_DropdownButtonCustom> createState() => _DropdownButtonCustomState();
-}
-
-class _DropdownButtonCustomState extends State<_DropdownButtonCustom> {
-  // * Start values for dropdown.
-  List<String> fruits = ['Manzana', 'Pera', 'Naranja', 'Sandia', 'Uva'];
-  String defaultFruit = '';
-
-  @override
-  void initState() {
-    super.initState();
-
-    defaultFruit = fruits.first;
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      width: double.maxFinite,
-      child: TextButton(
-        onPressed: () => showModalBottomSheet(
-          context: context,
-          showDragHandle: true,
-          builder: (context) => _Items(
-            fruits: fruits,
-            onPressed: (String value) {
-              defaultFruit = value;
-              context.pop();
-              setState(() {});
-            },
-          ),
-        ),
-        style: TextButton.styleFrom(
-          side: const BorderSide(color: Colors.black, width: 1),
-        ),
-        child: TextCustomWidget(
-          text: defaultFruit,
-          fontWeight: FontWeight.w500,
-          fontSize: 18,
-        ),
-      ),
-    );
-  }
-}
-
-class _Items extends StatelessWidget {
-  const _Items({
-    required this.fruits,
-    required this.onPressed,
-  });
-
-  final List<String> fruits;
-  final ValueChanged<String> onPressed;
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        ListView.builder(
-          padding: const EdgeInsets.all(0),
-          shrinkWrap: true,
-          itemCount: fruits.length,
-          itemBuilder: (_, index) {
-            final item = fruits[index];
-            return ListTile(
-              title: TextCustomWidget(text: item),
-              onTap: () => onPressed(item),
-            );
-          },
-        ),
-        ListTile(
-          dense: true,
-          title: const TextCustomWidget(text: 'Visualizar código'),
-          onTap: () {},
-          trailing: const Icon(Icons.arrow_right_alt_outlined),
-        ),
-        const SizedBox(height: 50),
-      ],
-    );
-  }
-}''',
-              },
-            );
+    return ListTile(
+      onTap: () => showModalBottomSheet(
+        context: context,
+        showDragHandle: true,
+        builder: (context) => _Items(
+          fruits: fruits,
+          onPressed: (String value) {
+            defaultFruit = value;
             context.pop();
+            setState(() {});
           },
-          trailing: const Icon(Icons.arrow_right_alt_outlined),
         ),
-        const SizedBox(height: 50),
+      ),
+      contentPadding: EdgeInsets.zero,
+      leading: const Icon(Icons.arrow_downward),
+      title: TextCustomWidget(
+        text: defaultFruit,
+        fontWeight: FontWeight.w400,
+        fontSize: 16,
+      ),
+      trailing: IconButton(
+        onPressed: () {
+          context.pushNamed(
+            CodeScreenShared.routeName,
+            extra: {
+              'screenName': 'DropdownButtonCustomized',
+              'code': '''
+              // * DropdownButton customized.
+              class _DropdownButtonCustom extends StatefulWidget {
+                const _DropdownButtonCustom();
+
+                @override
+                State<_DropdownButtonCustom> createState() => _DropdownButtonCustomState();
+              }
+
+              class _DropdownButtonCustomState extends State<_DropdownButtonCustom> {
+                // * Start values for dropdown.
+                List<String> fruits = ['Manzana', 'Pera', 'Naranja', 'Sandia', 'Uva'];
+                String defaultFruit = '';
+
+                @override
+                void initState() {
+                  super.initState();
+
+                  defaultFruit = fruits.first;
+                }
+
+                @override
+                Widget build(BuildContext context) {
+                  return SizedBox(
+                    width: double.maxFinite,
+                    child: TextButton(
+                      onPressed: () => showModalBottomSheet(
+                        context: context,
+                        showDragHandle: true,
+                        builder: (context) => _Items(
+                          fruits: fruits,
+                          onPressed: (String value) {
+                            defaultFruit = value;
+                            context.pop();
+                            setState(() {});
+                          },
+                        ),
+                      ),
+                      style: TextButton.styleFrom(
+                        side: const BorderSide(color: Colors.black, width: 1),
+                      ),
+                      child: TextCustomWidget(
+                        text: defaultFruit,
+                        fontWeight: FontWeight.w500,
+                        fontSize: 18,
+                      ),
+                    ),
+                  );
+                }
+              }
+
+              class _Items extends StatelessWidget {
+                const _Items({
+                  required this.fruits,
+                  required this.onPressed,
+                });
+
+                final List<String> fruits;
+                final ValueChanged<String> onPressed;
+
+                @override
+                Widget build(BuildContext context) {
+                  return Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      ListView.builder(
+                        padding: const EdgeInsets.all(0),
+                        shrinkWrap: true,
+                        itemCount: fruits.length,
+                        itemBuilder: (_, index) {
+                          final item = fruits[index];
+                          return ListTile(
+                            title: TextCustomWidget(text: item),
+                            onTap: () => onPressed(item),
+                          );
+                        },
+                      ),
+                      ListTile(
+                        dense: true,
+                        title: const TextCustomWidget(text: 'Visualizar código'),
+                        onTap: () {},
+                        trailing: const Icon(Icons.arrow_right_alt_outlined),
+                      ),
+                      const SizedBox(height: 50),
+                    ],
+                  );
+                }
+              }''',
+            },
+          );
+        },
+        icon: const Icon(Icons.code),
+      ),
+    );
+  }
+}
+
+class _Items extends StatelessWidget {
+  const _Items({
+    required this.fruits,
+    required this.onPressed,
+  });
+
+  final List<String> fruits;
+  final ValueChanged<String> onPressed;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        ListView.builder(
+          padding: const EdgeInsets.all(0),
+          shrinkWrap: true,
+          itemCount: fruits.length,
+          itemBuilder: (_, index) {
+            final item = fruits[index];
+            return ListTile(
+              title: TextCustomWidget(text: item),
+              onTap: () => onPressed(item),
+            );
+          },
+        ),
       ],
     );
   }
