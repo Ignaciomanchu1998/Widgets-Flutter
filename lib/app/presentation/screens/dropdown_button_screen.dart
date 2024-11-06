@@ -3,17 +3,17 @@ import 'package:go_router/go_router.dart';
 
 import '../presentation.dart';
 
-class SelectScreen extends StatelessWidget {
-  const SelectScreen({super.key});
+class DropdownButtonScreen extends StatelessWidget {
+  const DropdownButtonScreen({super.key});
 
-  static const routeName = '/select';
+  static const routeName = '/dropdown-button';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const TextCustomWidget(
-          text: 'Selects',
+          text: 'DropdownButton',
           fontSize: 20,
           fontWeight: FontWeight.w500,
         ),
@@ -95,7 +95,7 @@ class _DropdownButtonState extends State<_DropdownButton> {
             onPressed: () => context.pushNamed(
               CodeScreenShared.routeName,
               extra: {
-                'screenName': 'CupertinoTextFormFieldRow',
+                'screenName': 'DropdownButton',
                 'code': '''
 DropdownButton<String>(
   isExpanded: true, // * Ocupa todo el ancho de la pantalla.

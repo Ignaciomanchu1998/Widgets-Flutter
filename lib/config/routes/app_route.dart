@@ -21,9 +21,9 @@ final appRouter = GoRouter(
       builder: (context, state) => const InputScreen(),
     ),
     GoRoute(
-      path: '/select',
-      name: SelectScreen.routeName,
-      builder: (context, state) => const SelectScreen(),
+      path: '/dropdown-button',
+      name: DropdownButtonScreen.routeName,
+      builder: (context, state) => const DropdownButtonScreen(),
     ),
     GoRoute(
       path: '/code-screen-shared',
