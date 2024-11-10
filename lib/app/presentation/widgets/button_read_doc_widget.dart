@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import '../presentation.dart';
 
@@ -20,7 +21,10 @@ class ButtonReadDocWidget extends StatelessWidget {
           fontWeight: FontWeight.w300,
         ),
         TextButton(
-          onPressed: () {},
+          onPressed: () => context.pushNamed(
+            WebRenderScreen.routeName,
+            extra: urlDoc,
+          ),
           child: const TextCustomWidget(
             text: 'Leer aquí',
             fontSize: 15,

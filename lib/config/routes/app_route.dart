@@ -37,5 +37,14 @@ final appRouter = GoRouter(
         );
       },
     ),
+    GoRoute(
+      path: '/web-render',
+      name: WebRenderScreen.routeName,
+      builder: (context, state) {
+        final pathUrl = state.extra as String;
+
+        return WebRenderScreen(urlBase: pathUrl);
+      },
+    ),
   ],
 );
