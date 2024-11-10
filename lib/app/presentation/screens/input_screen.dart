@@ -54,6 +54,10 @@ class _Body extends StatelessWidget {
         // * CupertinoTextFieldRow
         SizedBox(height: 30),
         _CupertinoTextFieldRow(),
+
+        ButtonReadDocWidget(
+          urlDoc: 'https://docs.flutter.dev/ui/widgets/input',
+        ),
       ],
     );
   }

@@ -66,6 +66,10 @@ class _Body extends StatelessWidget {
 
           // * CustomButton with icon
           _ButtonCustomIconWithInkWell(),
+
+          ButtonReadDocWidget(
+            urlDoc: 'https://docs.flutter.dev/release/breaking-changes/buttons',
+          ),
         ],
       ),
     );
