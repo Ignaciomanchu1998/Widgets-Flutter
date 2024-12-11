@@ -65,7 +65,6 @@ class _BodyState extends State<_Body> {
 
     webViewController
       ..setJavaScriptMode(JavaScriptMode.unrestricted)
-      ..setBackgroundColor(Colors.white)
       ..setNavigationDelegate(
         NavigationDelegate(
           onPageFinished: (String url) {
